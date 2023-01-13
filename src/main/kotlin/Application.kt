@@ -5,4 +5,7 @@ fun main() {
 
     println("시도할 횟수를 입력하세요")
     val turn = readln().toInt()
+
+    val racingGame = RacingGame(turn, cars)
+    racingGame.start()
 }
