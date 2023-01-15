@@ -1,4 +1,4 @@
-class Car(private val name: String) {
+class Car(val name: String) {
 
     var distance: Int = 0
 
