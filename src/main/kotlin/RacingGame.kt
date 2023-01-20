@@ -1,15 +1,21 @@
-class RacingGame(private val turn: Int, private val cars: Cars) {
+class RacingGame(names: List<String>) {
+
+    private val cars: Cars
+
     companion object {
         private const val MIN_RAND_NUM_RANGE = 0
         private const val MAX_RAND_NUM_RANGE = 9
         private const val MOVE_LOWER_LIMIT = 4
     }
 
-    fun executeAndReturnWinner(): List<String> {
+    init {
+        cars = Cars(names)
+    }
+
+    fun start(turn: Int) {
         for (i in 1..turn) {
             cars.moveOrStop { judgeMove() }
         }
-        return getWinnerName()
     }
 
     private fun judgeMove(): Boolean {
@@ -18,7 +24,11 @@ class RacingGame(private val turn: Int, private val cars: Cars) {
         return randomNumber >= MOVE_LOWER_LIMIT
     }
 
-    private fun getWinnerName(): List<String> {
+    fun getRaceResult(): Map<String, Int> {
+        return cars.getLocations()
+    }
+
+    fun getWinnerName(): List<String> {
         return cars.getFrontRunnerCar()
             .map { it.name }
             .toList()

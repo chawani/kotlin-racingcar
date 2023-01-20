@@ -1,13 +1,22 @@
 fun main() {
+    val racingGame = RacingGame(inputNames())
+    racingGame.start(inputTurn())
+    printRacingGameResult(racingGame)
+}
+
+private fun inputNames(): List<String> {
     OutputView.printCarNamesInputMessage()
-    val names = InputView.inputCarNames()
-    val cars = Cars(names)
+    return InputView.inputCarNames()
+}
 
+private fun inputTurn(): Int {
     OutputView.printTurnInputMessage()
-    val turn = InputView.inputTurn()
+    return InputView.inputTurn()
+}
 
-    val racingGame = RacingGame(turn, cars)
-    val winner = racingGame.executeAndReturnWinner()
-
-    OutputView.printResult(cars, winner)
+private fun printRacingGameResult(racingGame: RacingGame) {
+    OutputView.printResult(
+        racingGame.getRaceResult(),
+        racingGame.getWinnerName()
+    )
 }
