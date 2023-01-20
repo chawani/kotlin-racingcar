@@ -1,6 +1,6 @@
 fun main() {
     val racingGame = RacingGame(inputNames())
-    racingGame.start(inputTurn())
+    racingGame.execute(inputTurn())
     printRacingGameResult(racingGame)
 }
 

@@ -1,3 +1,6 @@
+import constant.ViewConstants.MOVE_LINE_REPRESENTATION
+import constant.ViewConstants.NAME_DELIMITER
+
 class OutputView {
     companion object {
 
@@ -7,9 +10,9 @@ class OutputView {
 
         fun printResult(locations: Map<String, Int>, winner: List<String>) {
             locations.forEach {
-                println("${it.key} : ${"-".repeat(it.value)}")
+                println("${it.key} : ${MOVE_LINE_REPRESENTATION.repeat(it.value)}")
             }
-            println("우승자 : ${winner.joinToString(",")}")
+            println("우승자 : ${winner.joinToString(NAME_DELIMITER)}")
         }
     }
 }

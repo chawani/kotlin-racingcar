@@ -12,7 +12,7 @@ class RacingGame(names: List<String>) {
         cars = Cars(names)
     }
 
-    fun start(turn: Int) {
+    fun execute(turn: Int) {
         for (i in 1..turn) {
             cars.moveOrStop { judgeMove() }
         }
