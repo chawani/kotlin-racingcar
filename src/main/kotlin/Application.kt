@@ -1,11 +1,13 @@
 fun main() {
     OutputView.printCarNamesInputMessage()
     val names = InputView.inputCarNames()
-    val cars = names.map { Car(it) }
+    val cars = Cars(names)
 
     OutputView.printTurnInputMessage()
     val turn = InputView.inputTurn()
 
     val racingGame = RacingGame(turn, cars)
-    racingGame.start()
+    val winner = racingGame.executeAndReturnWinner()
+
+    OutputView.printResult(cars, winner)
 }
