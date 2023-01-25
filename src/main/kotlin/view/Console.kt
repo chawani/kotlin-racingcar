@@ -1,3 +1,5 @@
+package view
+
 import constant.ValidationConstants.NAME_MAX_LENGTH
 import constant.ViewConstants
 import constant.ViewConstants.NAME_DELIMITER

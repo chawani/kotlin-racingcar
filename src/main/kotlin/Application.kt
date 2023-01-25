@@ -1,3 +1,6 @@
+import domain.RacingGame
+import view.Console
+
 fun main() {
     val racingGame = RacingGame(Console.inputCarNames())
     racingGame.execute(Console.inputTurn())

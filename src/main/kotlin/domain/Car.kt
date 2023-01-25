@@ -1,4 +1,8 @@
-class Car(val name: String) {
+package domain
+
+class Car(
+    val name: String
+) {
 
     var distance: Int = 0
 

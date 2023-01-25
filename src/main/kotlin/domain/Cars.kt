@@ -1,4 +1,9 @@
-class Cars(names: List<String>) {
+package domain
+
+class Cars(
+    names: List<String>
+) {
+
     private val cars: List<Car> = names.map { Car(it) }
 
     fun moveOrStop(judgeMove: () -> Boolean) {

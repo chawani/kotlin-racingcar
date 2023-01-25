@@ -1,4 +1,8 @@
-class RacingGame(names: List<String>) {
+package domain
+
+class RacingGame(
+    names: List<String>
+) {
 
     private val cars: Cars
 
