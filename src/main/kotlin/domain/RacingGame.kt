@@ -4,16 +4,12 @@ class RacingGame(
     names: List<String>
 ) {
 
-    private val cars: Cars
+    private val cars: List<Car> = names.map { Car(it) }
 
     companion object {
         private const val MIN_RAND_NUM_RANGE = 0
         private const val MAX_RAND_NUM_RANGE = 9
         private const val MOVE_LOWER_LIMIT = 4
-    }
-
-    init {
-        cars = Cars(names)
     }
 
     fun execute(turn: Int) {
