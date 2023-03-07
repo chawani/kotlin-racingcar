@@ -4,7 +4,7 @@ class RacingGame(
     names: List<String>
 ) {
 
-    private val cars: List<Car> = names.map { Car(it) }
+    private val cars: Cars = Cars(names.map { Car(it) })
 
     companion object {
         private const val MIN_RAND_NUM_RANGE = 0
@@ -29,8 +29,6 @@ class RacingGame(
     }
 
     fun getWinnerName(): List<String> {
-        return cars.getFrontRunnerCar()
-            .map { it.name }
-            .toList()
+        return cars.getFrontRunnerCar().map { it.name }
     }
 }
